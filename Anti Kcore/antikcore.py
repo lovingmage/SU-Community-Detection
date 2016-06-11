@@ -139,10 +139,37 @@ def resi_core(G):
         
     return G.subgraph(resi_node).copy()
      
+<<<<<<< HEAD
+	
+    
+if __name__ == "__main__":
+    FILE_PATH = sys.argv[1]
+    
+    G = nx.read_edgelist(FILE_PATH)
+    node_size = int(sys.argv[2])
+    '''Set Upper Bound Graph Scale'''
+    upper_bound = int(0.1 * node_size * len(G.nodes()))
+    
+    
+    M = resi_core(G)
+    #nx.draw_spring(G)
+    #plt.savefig('origin')
+    
+    '''
+    (H, temp) = anti_kcore(G)
+    M = G.subgraph(temp)
+    
+    nx.draw_spring(M)
+    plt.savefig('dl2')
+    '''
+    
+    
+=======
      
 #<------------ResiCore with Hard Upperbound------------->
 def resi_subgraph(G, upper_bound):
 
+>>>>>>> master
     resi_node = []
     G1 = G
       
@@ -161,9 +188,27 @@ def resi_subgraph(G, upper_bound):
 		break
         
 
+<<<<<<< HEAD
+    M = G.subgraph(resi_node).copy()
+#    print len(M)
+
+    partition = community.best_partition(M)
+    for key in partition.keys():
+	print key  
+ 
+    '''outPartition = json.dumps(partition)  
+    json.dump(outPartition, open(sys.argv[1]+".dat", 'w'))
+=======
     return G.subgraph(resi_node).copy()
+>>>>>>> master
     
     
+<<<<<<< HEAD
+    #nx.draw_spring(M, node_size=50, with_labels=False)
+    plt.savefig('c-dl' + sys.argv[1])'''
+
+=======
+>>>>>>> master
     
     
 #<------------Test Stub------------>
